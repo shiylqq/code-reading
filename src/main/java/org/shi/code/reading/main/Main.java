@@ -10,6 +10,6 @@ public class Main {
 
         Person person = (Person)context.getBean("person");
 
-        System.out.println("person:"+ person.getName());
-    }
+        System.out.println("person:" + person.toString());
+        }
 }
