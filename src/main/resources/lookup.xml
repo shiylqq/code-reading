@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="apple" class="org.shi.code.reading.lookup.pojo.Apple" scope="prototype"/><!--原型模式在调用getBean方法时，直接调用创建createBean方法，单例模式只调用一次createBean方法后将返回值保存到缓存中，再次调用会直接从缓存中获取-->
+    <bean name="banana" class="org.shi.code.reading.lookup.pojo.Banana"/>
+
+    <bean name="fruitPlate" class="org.shi.code.reading.lookup.pojo.FruitPlate">
+        <lookup-method name="getFruit" bean="apple"/>
+    </bean>
+
+</beans>
