@@ -6,10 +6,13 @@
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="org.shi.code.reading.main.config"/>
-    <context:property-placeholder location="classpath:application.properties"/>
-    <context:annotation-config></context:annotation-config>
+<!--    <context:property-placeholder location="classpath:application.properties"/>
+    <context:annotation-config></context:annotation-config>-->
     <bean name="person" class="org.shi.code.reading.main.pojo.Person">
         <property name="name" value="sliang"/>
-        <property name="age" value="${person.age}"/>
+        <!--<property name="age" value="${person.age}"/>-->
+    </bean>
+    <bean name="userFactoryBean" class="org.shi.code.reading.main.config.UserFactoryBean">
+        <property name="userName" value="ssss"/>
     </bean>
 </beans>
