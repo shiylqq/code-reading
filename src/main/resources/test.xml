@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -14,5 +14,9 @@
     </bean>
     <bean name="userFactoryBean" class="org.shi.code.reading.main.config.UserFactoryBean">
         <property name="userName" value="ssss"/>
+    </bean>
+    <bean name="dog" class="org.shi.code.reading.main.pojo.Dog">
+        <property name="name" value="little flower"/>
+        <property name="age" value="10"/>
     </bean>
 </beans>

@@ -16,4 +16,5 @@ public class Man extends Person{
     public void setJj(Boolean jj) {
         this.jj = jj;
     }
+
 }

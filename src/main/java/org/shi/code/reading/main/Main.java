@@ -1,6 +1,7 @@
 package org.shi.code.reading.main;
 
 import org.shi.code.reading.main.config.UserFactoryBean;
+import org.shi.code.reading.main.pojo.Man;
 import org.shi.code.reading.main.pojo.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,8 +25,8 @@ public class Main {
         Object bean2 = context.getBean("&userFactoryBean");
         System.out.println("factoryBean get by name with &:" + bean2);
 
-//        Object user = context.getBean("user");
+        Man man = (Man) context.getBean("man");
 //
-//        System.out.println(user);
+        System.out.println(man);
     }
 }

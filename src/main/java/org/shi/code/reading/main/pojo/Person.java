@@ -6,6 +6,20 @@ public class Person {
 
     private int age;
 
+    private Dog dog;
+
+    public Dog getDog() {
+        return dog;
+    }
+
+    /**
+     * 如果auto-wire被明确设置为byType或byName就会自动注入容器中的对象
+     * @param dog
+     */
+    public void setDog(Dog dog) {
+        this.dog = dog;
+    }
+
     public String getName() {
         return name;
     }
@@ -27,6 +41,7 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", dog=" + dog +
                 '}';
     }
 }
