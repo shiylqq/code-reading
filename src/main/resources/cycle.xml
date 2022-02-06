@@ -19,7 +19,7 @@
     <aop:config>
         <aop:aspect id="loggerAspect" ref="logger">
             <aop:pointcut id="method" expression="execution(* org.shi.code.reading.cycle.pojo.*.*(..))"/>
-            <aop:before method="recordBefore" pointcut-ref="method"/>
+            <aop:before method="recordBefore" pointcut-ref="method"/><!--pointCut表达式会被每个具体的advice实例持有-->
             <aop:after method="recordAfter" pointcut-ref="method"/>
         </aop:aspect>
     </aop:config>

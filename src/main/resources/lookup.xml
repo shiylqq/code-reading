@@ -7,7 +7,7 @@
     <bean name="banana" class="org.shi.code.reading.lookup.pojo.Banana"/>
 
     <bean name="fruitPlate" class="org.shi.code.reading.lookup.pojo.FruitPlate">
-        <lookup-method name="getFruit" bean="apple"/>
+        <lookup-method name="getFruit" bean="apple"/><!--用来解决单例bean应用原型bean-->
     </bean>
 
 </beans>
