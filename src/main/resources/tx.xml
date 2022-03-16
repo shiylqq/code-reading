@@ -25,7 +25,7 @@
     </bean>
     <aop:config>
         <aop:pointcut id="txPoint" expression="execution(* org.shi.code.reading.tx.xml.*.*.*(..))"/>
-        <aop:advisor advice-ref="myAdvice" pointcut-ref="txPoint"></aop:advisor>
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="txPoint"></aop:advisor><!--注册DefaultBeanFactoryPointcutAdvisor-->
     </aop:config>
     <tx:advice id="myAdvice" transaction-manager="transactionManager">
         <tx:attributes>

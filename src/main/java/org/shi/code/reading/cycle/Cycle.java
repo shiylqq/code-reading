@@ -4,7 +4,7 @@ import org.shi.code.reading.cycle.pojo.A;
 import org.shi.code.reading.cycle.pojo.B;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Main {
+public class Cycle {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("classpath:cycle.xml");
 
