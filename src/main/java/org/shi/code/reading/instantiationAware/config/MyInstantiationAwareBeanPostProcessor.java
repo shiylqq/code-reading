@@ -27,6 +27,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
+        //在这里实现@Autowired、@Resource、@PostConstruct、@preDestroy
         if (Cup.class == bean.getClass()) {
             System.out.println("postProcessProperties在依赖注入后执行，在填充属性前执行：" + bean);
             ((Cup)bean).setColor("white");
