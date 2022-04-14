@@ -8,6 +8,7 @@
     <bean id="a" class="org.shi.code.reading.cycle.pojo.A">
         <property name="name" value="obj_a"/>
         <property name="b" ref="b"/>
+        <property name="c" ref="c"/>
     </bean>
 
     <bean id="b" class="org.shi.code.reading.cycle.pojo.B">
@@ -15,9 +16,13 @@
         <property name="a" ref="a"/>
     </bean>
 
+    <bean id="c" class="org.shi.code.reading.cycle.pojo.C">
+        <property name="name" value="myC"/>
+    </bean>
+
     <bean id="logger" class="org.shi.code.reading.cycle.config.Logger"></bean>
     <aop:config>
-        <aop:aspect id="loggerAspect" ref="logger">
+        <aop:aspect id="loggerAspect" ref="logger"><!--这里会对应注册一个advisor-->
             <aop:pointcut id="method" expression="execution(* org.shi.code.reading.cycle.pojo.*.*(..))"/>
             <aop:before method="recordBefore" pointcut-ref="method"/><!--pointCut表达式会被每个具体的advice实例持有-->
             <aop:after method="recordAfter" pointcut-ref="method"/>

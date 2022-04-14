@@ -6,6 +6,8 @@ public class A {
 
     private B b;
 
+    private CInterface c;
+
     public String getName() {
         return name;
     }
@@ -22,5 +24,11 @@ public class A {
         this.b = b;
     }
 
+    public CInterface getC() {
+        return c;
+    }
 
+    public void setC(CInterface c) {
+        this.c = c;
+    }
 }
