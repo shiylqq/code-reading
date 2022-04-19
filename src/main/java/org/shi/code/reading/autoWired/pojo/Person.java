@@ -2,11 +2,13 @@ package org.shi.code.reading.autoWired.pojo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
+
 public class Person {
     private String name;
 
-    @Autowired
-    private Pen pen;
+    @Resource
+    private Pen pen1;
 
     public String getName() {
         return name;
@@ -16,19 +18,19 @@ public class Person {
         this.name = name;
     }
 
-    public Pen getPen() {
-        return pen;
+    public Pen getPen1() {
+        return pen1;
     }
 
-    public void setPen(Pen pen) {
-        this.pen = pen;
+    public void setPen1(Pen pen1) {
+        this.pen1 = pen1;
     }
 
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", pen=" + pen +
+                ", pen=" + pen1 +
                 '}';
     }
 }
