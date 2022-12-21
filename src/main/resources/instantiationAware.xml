@@ -7,5 +7,6 @@
     <bean class="org.shi.code.reading.instantiationAware.pojo.Cup">
         <property name="type" value="tea cup"/>
     </bean>
+    <bean id="serviceA" class="org.shi.code.reading.instantiationAware.service.impl.ServiceAImpl" />
 
 </beans>

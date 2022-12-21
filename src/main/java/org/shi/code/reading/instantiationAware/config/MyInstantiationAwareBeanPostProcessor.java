@@ -1,9 +1,14 @@
 package org.shi.code.reading.instantiationAware.config;
 
+import org.shi.code.reading.instantiationAware.invocationHandler.MyInvocationHandler;
 import org.shi.code.reading.instantiationAware.pojo.Cup;
+import org.shi.code.reading.instantiationAware.service.ServiceA;
+import org.shi.code.reading.instantiationAware.service.impl.ServiceAImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+
+import java.lang.reflect.Proxy;
 
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
     @Override
@@ -48,6 +53,15 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
         if (Cup.class == bean.getClass()) {
             System.out.println("postProcessAfterInitialization在init-method后执行");
         }
+        System.out.println(bean.getClass());
+        if (ServiceAImpl.class == bean.getClass()) {
+
+            Object instance = Proxy.newProxyInstance(bean.getClass().getClassLoader(), bean.getClass().getInterfaces(), new MyInvocationHandler(bean));
+            return instance;
+        }
+
         return InstantiationAwareBeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
     }
+
+
 }
