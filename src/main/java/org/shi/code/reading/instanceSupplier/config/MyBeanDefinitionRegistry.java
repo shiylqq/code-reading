@@ -16,7 +16,7 @@ public class MyBeanDefinitionRegistry implements BeanDefinitionRegistryPostProce
         tuBD.setInstanceSupplier(() ->{
             Tu tu = new Tu();
             tu.setName("tzhengyuan");
-            tu.setHasband("sliang");
+            tu.setHusband("sliang");
             return tu;
         });
     }

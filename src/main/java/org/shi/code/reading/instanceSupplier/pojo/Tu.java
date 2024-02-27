@@ -3,7 +3,7 @@ package org.shi.code.reading.instanceSupplier.pojo;
 public class Tu {
     private String name;
 
-    private String hasband;
+    private String husband;
 
 
     public String getName() {
@@ -14,19 +14,19 @@ public class Tu {
         this.name = name;
     }
 
-    public String getHasband() {
-        return hasband;
+    public String getHusband() {
+        return husband;
     }
 
-    public void setHasband(String hasband) {
-        this.hasband = hasband;
+    public void setHusband(String husband) {
+        this.husband = husband;
     }
 
     @Override
     public String toString() {
         return "Tu{" +
                 "name='" + name + '\'' +
-                ", hasband='" + hasband + '\'' +
+                ", hasband='" + husband + '\'' +
                 '}';
     }
 }
